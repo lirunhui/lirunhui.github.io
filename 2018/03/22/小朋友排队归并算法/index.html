@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="-JAVA -算法 -数据结构," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="} merge(num1,0,n-1); long sum=0;//������long���������� for(int k=0;k&amp;lt;n;k++) {     //System.out.println(num1[k].h+&amp;quot; &amp;quot;+num1[k].t);     sum+=(num1[k].t*(num1[k].t+1))/2;//�Ȳ�������͹�ʾ  }  Sy">
+<meta name="description" content="问题描述　　n 个小朋友站成一排。现在要把他们按身高从低到高的顺序排列，但是每次只能交换位置相邻的两个小朋友。 　　每个小朋友都有一个不高兴的程度。开始的时候，所有小朋友的不高兴程度都是0。 　　如果某个小朋友第一次被要求交换，则他的不高兴程度增加1，如果第二次要求他交换，则他的不高兴程度增加2（即不高兴程度为3），依次类推。当要求某个小朋友第k次交换时，他的不高兴程度增加k。 　　请问，要让所有">
+<meta name="keywords" content="-JAVA -算法 -数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UI Development（LRH）">
+<meta property="og:title" content="蓝桥杯小朋友排队JAVA">
 <meta property="og:url" content="http://yoursite.com/2018/03/22/小朋友排队归并算法/index.html">
 <meta property="og:site_name" content="UI Development（LRH）">
-<meta property="og:description" content="} merge(num1,0,n-1); long sum=0;//������long���������� for(int k=0;k&amp;lt;n;k++) {     //System.out.println(num1[k].h+&amp;quot; &amp;quot;+num1[k].t);     sum+=(num1[k].t*(num1[k].t+1))/2;//�Ȳ�������͹�ʾ  }  Sy">
+<meta property="og:description" content="问题描述　　n 个小朋友站成一排。现在要把他们按身高从低到高的顺序排列，但是每次只能交换位置相邻的两个小朋友。 　　每个小朋友都有一个不高兴的程度。开始的时候，所有小朋友的不高兴程度都是0。 　　如果某个小朋友第一次被要求交换，则他的不高兴程度增加1，如果第二次要求他交换，则他的不高兴程度增加2（即不高兴程度为3），依次类推。当要求某个小朋友第k次交换时，他的不高兴程度增加k。 　　请问，要让所有">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T06:12:18.614Z">
+<meta property="og:updated_time" content="2018-03-22T11:50:12.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UI Development（LRH）">
-<meta name="twitter:description" content="} merge(num1,0,n-1); long sum=0;//������long���������� for(int k=0;k&amp;lt;n;k++) {     //System.out.println(num1[k].h+&amp;quot; &amp;quot;+num1[k].t);     sum+=(num1[k].t*(num1[k].t+1))/2;//�Ȳ�������͹�ʾ  }  Sy">
+<meta name="twitter:title" content="蓝桥杯小朋友排队JAVA">
+<meta name="twitter:description" content="问题描述　　n 个小朋友站成一排。现在要把他们按身高从低到高的顺序排列，但是每次只能交换位置相邻的两个小朋友。 　　每个小朋友都有一个不高兴的程度。开始的时候，所有小朋友的不高兴程度都是0。 　　如果某个小朋友第一次被要求交换，则他的不高兴程度增加1，如果第二次要求他交换，则他的不高兴程度增加2（即不高兴程度为3），依次类推。当要求某个小朋友第k次交换时，他的不高兴程度增加k。 　　请问，要让所有">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title> | UI Development（LRH）</title>
+  <title>蓝桥杯小朋友排队JAVA | UI Development（LRH）</title>
   
 
 
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">蓝桥杯小朋友排队JAVA</h1>
         
 
         <div class="post-meta">
@@ -281,7 +282,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T14:11:22+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T14:45:44+08:00">
                 2018-03-22
               </time>
             
@@ -319,21 +320,44 @@
       
 
       
-        <pre><code>}
+        <p>问题描述<br>　　n 个小朋友站成一排。现在要把他们按身高从低到高的顺序排列，但是每次只能交换位置相邻的两个小朋友。</p>
+<p>　　每个小朋友都有一个不高兴的程度。开始的时候，所有小朋友的不高兴程度都是0。</p>
+<p>　　如果某个小朋友第一次被要求交换，则他的不高兴程度增加1，如果第二次要求他交换，则他的不高兴程度增加2（即不高兴程度为3），依次类推。当要求某个小朋友第k次交换时，他的不高兴程度增加k。</p>
+<p>　　请问，要让所有小朋友按从低到高排队，他们的不高兴程度之和最小是多少。</p>
+<p>　　如果有两个小朋友身高一样，则他们谁站在谁前面是没有关系的。<br>输入格式<br>　　输入的第一行包含一个整数n，表示小朋友的个数。<br>　　第二行包含 n 个整数 H1 H2 … Hn，分别表示每个小朋友的身高。<br>输出格式<br>　　输出一行，包含一个整数，表示小朋友的不高兴程度和的最小值。<br>样例输入<br>3<br>3 2 1<br>样例输出<br>9<br>样例说明<br>　　首先交换身高为3和2的小朋友，再交换身高为3和1的小朋友，再交换身高为2和1的小朋友，每个小朋友的不高兴程度都是3，总和为9。<br>数据规模和约定<br>　　对于10%的数据， 1&lt;=n&lt;=10；<br>　　对于30%的数据， 1&lt;=n&lt;=1000；<br>　　对于50%的数据， 1&lt;=n&lt;=10000；<br>　　对于100%的数据，1&lt;=n&lt;=100000，0&lt;=Hi&lt;=1000000。<br>该问题的解法有两种</p>
+<p>一：归并排序</p>
+<p>归并排序的特点非常符合本题，本题要求只能相邻的元素相互交换，而归并排序本质排序也是这样；具体怎么解，看下边的代码，本人小白一个，参加了这次的java蓝桥杯，遇到这个题后，不知道如何解答，在网上搜到的大多是c/c++，搜到的java写的也大多有错误，写了好久总是不对，还以为本题无法用java写出，终于写出来了 哈哈  功夫不负有心人，注释中的数组都是值得对象数组，元素也是对象元素；</p>
+<p>二：树状数组（不太了解这块，所以不说了）</p>
+<p>import java.util.*;<br>public class Main {</p>
+<pre><code>/**
+ * @param args
+ */
+</code></pre><p>public static class num //内部类<br>{<br>    public long h;//用long，否则会出错<br>    public long t;//用long,否则会出错<br>}<br>static num num1[]=new num[100001];//一开始开了100005个，但是造成了有一组测试数据超时<br>static num num2[]=new num[100001];//<br>    public static void main(String[] args) {</p>
+<pre><code>for(int i=0;i&lt;100001;i++)//对内部类对象初始化
+{
+    num1[i]=new num();
+    num2[i]=new num();
+}
+Scanner input=new Scanner(System.in);
+int n=input.nextInt();
+for(int j=0;j&lt;n;j++)
+{
+    num1[j].h=input.nextInt();
+}
 merge(num1,0,n-1);
-long sum=0;//������long����������
+long sum=0;//必须用long，否则会错误
 for(int k=0;k&lt;n;k++)
 {
     //System.out.println(num1[k].h+&quot; &quot;+num1[k].t);
-    sum+=(num1[k].t*(num1[k].t+1))/2;//�Ȳ�������͹�ʾ 
+    sum+=(num1[k].t*(num1[k].t+1))/2;//等差数列求和公示 
 }
 
 System.out.println(sum);
-</code></pre><p>}<br>    public static void merge(num a[],int left,int right)<br>    {<br>        if(left==right)   //��ֹ�ݹ������<br>        {<br>            return;<br>        }<br>        int mid=(left+right)/2;<br>        merge(a,left,mid);<br>        merge(a,mid+1,right);<br>        int p=left;<br>        int q=mid+1;<br>        int i=left;<br>         while(p&lt;=mid &amp;&amp; q&lt;=right)<br>         {<br>             if(a[p].h&gt;a[q].h)<br>             {<br>                 a[q].t+=mid+1-p;//����������һ��Ԫ�ر��������һ��Ԫ�ش���Ϊ�������鶼�Ǵ�С���������<br>//�������������е�Ԫ�أ�mid+1-p�����������������һ��Ԫ��;<br> num2[i++]=a[q++];//ע�����ｻ�����������,���ǹ鲢����ĺ���֪ʶ<br>             }<br>             else<br>             {<br>                 a[p].t+=q-1-mid;//������ĵ�һ��Ԫ��С�ڻ��ߵ���������ĵ�һ��Ԫ�أ�q-1-mid==0,���������У�q��ָ��Ԫ��ǰ���Ԫ�ؾ���С��p��ָ��Ԫ�أ�q-1-mid����q��ָԪ�ص�ǰ��Ԫ�صĸ���;<br>                 num2[i++]=a[p++];<br>             }<br>         }<br>         while(q&lt;=right)//��������ʣ�࣬˵���������Ԫ�ض���������ʣ�µ�Ԫ��С<br>         {<br>            num2[i++]=a[q++];<br>         }<br>         q–;//��ǰ���ж�ѭ����ֹʱq=last+1������ѭ����ֹ������������Ҫ��ȥ1<br>         while(p&lt;=mid)<br>         {<br>             a[p].t+=q-mid;<br>            num2[i++]=a[p++];<br>         }</p>
+</code></pre><p>}<br>    public static void merge(num a[],int left,int right)<br>    {<br>        if(left==right)   //终止递归的条件<br>        {<br>            return;<br>        }<br>        int mid=(left+right)/2;<br>        merge(a,left,mid);<br>        merge(a,mid+1,right);<br>        int p=left;<br>        int q=mid+1;<br>        int i=left;<br>         while(p&lt;=mid &amp;&amp; q&lt;=right)<br>         {<br>             if(a[p].h&gt;a[q].h)<br>             {<br>                 a[q].t+=mid+1-p;//如果左数组第一个元素比右数组第一个元素大，因为左右数组都是从小到大排序的<br>//所以左数组所有的元素（mid+1-p个）都大于右数组第一个元素;<br> num2[i++]=a[q++];//注意这里交换的是类对象,这是归并排序的核心知识<br>             }<br>             else<br>             {<br>                 a[p].t+=q-1-mid;//左数组的第一个元素小于或者等于右数组的第一个元素，q-1-mid==0,在右数组中，q所指的元素前面的元素就是小于p所指的元素，q-1-mid就是q所指元素的前边元素的个数;<br>                 num2[i++]=a[p++];<br>             }<br>         }<br>         while(q&lt;=right)//右数组有剩余，说明左数组的元素都比右数组剩下的元素小<br>         {<br>            num2[i++]=a[q++];<br>         }<br>         q–;//在前边判断循环终止时q=last+1，所以循环终止，所以这里需要减去1<br>         while(p&lt;=mid)<br>         {<br>             a[p].t+=q-mid;<br>            num2[i++]=a[p++];<br>         }</p>
 <pre><code>    int j=left;
      for(;j&lt;=right;j++)
      {
-         a[j]=num2[j];//������õ���������鴫��ԭ���������
+         a[j]=num2[j];//将排序好的类对象数组传给原类对象数组
      }
 
 }
@@ -353,6 +377,12 @@ System.out.println(sum);
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA-算法-数据结构/" rel="tag"># -JAVA -算法 -数据结构</a>
+          
+        </div>
+      
 
       
       
@@ -362,18 +392,14 @@ System.out.println(sum);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/21/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/22/lirunhui/" rel="prev" title="lirunhui">
-                lirunhui <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/22/ALLSort/" rel="prev" title="ALLSort">
+                ALLSort <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -450,6 +476,15 @@ System.out.println(sum);
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
