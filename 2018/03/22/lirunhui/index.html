@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="} merge(num1,0,n-1); long sum=0;//������long���������� for(int k=0;k&amp;lt;n;k++) {     //System.out.println(num1[k].h+&amp;quot; &amp;quot;+num1[k].t);     sum+=(num1[k].t*(num1[k].t+1))/2;//�Ȳ�������͹�ʾ  }  Sy">
+<meta name="description" content="���������������������������������������������������������������������������������������������������������">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2018/03/22/小朋友排队归并算法/index.html">
+<meta property="og:title" content="lirunhui">
+<meta property="og:url" content="http://yoursite.com/2018/03/22/lirunhui/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="} merge(num1,0,n-1); long sum=0;//������long���������� for(int k=0;k&amp;lt;n;k++) {     //System.out.println(num1[k].h+&amp;quot; &amp;quot;+num1[k].t);     sum+=(num1[k].t*(num1[k].t+1))/2;//�Ȳ�������͹�ʾ  }  Sy">
+<meta property="og:description" content="���������������������������������������������������������������������������������������������������������">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T06:12:18.614Z">
+<meta property="og:updated_time" content="2018-03-22T06:46:55.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="} merge(num1,0,n-1); long sum=0;//������long���������� for(int k=0;k&amp;lt;n;k++) {     //System.out.println(num1[k].h+&amp;quot; &amp;quot;+num1[k].t);     sum+=(num1[k].t*(num1[k].t+1))/2;//�Ȳ�������͹�ʾ  }  Sy">
+<meta name="twitter:title" content="lirunhui">
+<meta name="twitter:description" content="���������������������������������������������������������������������������������������������������������">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/22/小朋友排队归并算法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/22/lirunhui/"/>
 
 
 
 
 
-  <title> | Hexo</title>
+  <title>lirunhui | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/小朋友排队归并算法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/lirunhui/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">lirunhui</h1>
         
 
         <div class="post-meta">
@@ -261,7 +261,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T14:11:22+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T14:45:44+08:00">
                 2018-03-22
               </time>
             
@@ -299,25 +299,7 @@
       
 
       
-        <pre><code>}
-merge(num1,0,n-1);
-long sum=0;//������long����������
-for(int k=0;k&lt;n;k++)
-{
-    //System.out.println(num1[k].h+&quot; &quot;+num1[k].t);
-    sum+=(num1[k].t*(num1[k].t+1))/2;//�Ȳ�������͹�ʾ 
-}
-
-System.out.println(sum);
-</code></pre><p>}<br>    public static void merge(num a[],int left,int right)<br>    {<br>        if(left==right)   //��ֹ�ݹ������<br>        {<br>            return;<br>        }<br>        int mid=(left+right)/2;<br>        merge(a,left,mid);<br>        merge(a,mid+1,right);<br>        int p=left;<br>        int q=mid+1;<br>        int i=left;<br>         while(p&lt;=mid &amp;&amp; q&lt;=right)<br>         {<br>             if(a[p].h&gt;a[q].h)<br>             {<br>                 a[q].t+=mid+1-p;//����������һ��Ԫ�ر��������һ��Ԫ�ش���Ϊ�������鶼�Ǵ�С���������<br>//�������������е�Ԫ�أ�mid+1-p�����������������һ��Ԫ��;<br> num2[i++]=a[q++];//ע�����ｻ�����������,���ǹ鲢����ĺ���֪ʶ<br>             }<br>             else<br>             {<br>                 a[p].t+=q-1-mid;//������ĵ�һ��Ԫ��С�ڻ��ߵ���������ĵ�һ��Ԫ�أ�q-1-mid==0,���������У�q��ָ��Ԫ��ǰ���Ԫ�ؾ���С��p��ָ��Ԫ�أ�q-1-mid����q��ָԪ�ص�ǰ��Ԫ�صĸ���;<br>                 num2[i++]=a[p++];<br>             }<br>         }<br>         while(q&lt;=right)//��������ʣ�࣬˵���������Ԫ�ض���������ʣ�µ�Ԫ��С<br>         {<br>            num2[i++]=a[q++];<br>         }<br>         q–;//��ǰ���ж�ѭ����ֹʱq=last+1������ѭ����ֹ������������Ҫ��ȥ1<br>         while(p&lt;=mid)<br>         {<br>             a[p].t+=q-mid;<br>            num2[i++]=a[p++];<br>         }</p>
-<pre><code>    int j=left;
-     for(;j&lt;=right;j++)
-     {
-         a[j]=num2[j];//������õ���������鴫��ԭ���������
-     }
-
-}
-</code></pre><p>}</p>
+        <p>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>�����<br>����������</p>
 
       
     </div>
@@ -342,8 +324,8 @@ System.out.println(sum);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/21/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/03/22/小朋友排队归并算法/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -351,10 +333,6 @@ System.out.println(sum);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/22/lirunhui/" rel="prev" title="lirunhui">
-                lirunhui <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
