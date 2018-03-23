@@ -252,6 +252,207 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/The-partial-sum-problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LRH">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="UI Development（LRH）">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/23/The-partial-sum-problem/" itemprop="url">The partial sum problem</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T09:38:47+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/DFS/" itemprop="url" rel="index">
+                    <span itemprop="name">DFS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>问题：<br>     描述<br>One day,Tom’s girlfriend give him an array A which contains N integers and asked him:Can you choose some integers from the N integers and the sum of them is equal to K.<br>输入<br>There are multiple test cases.<br>Each test case contains three lines.The first line is an integer N(1≤N≤20),represents the array contains N integers. The second line contains N integers,the ith integer represents A<a href="-10^8≤A[i]≤10^8">i</a>.The third line contains an integer K(-10^8≤K≤10^8).<br>输出<br>If Tom can choose some integers from the array and their them is K,printf ”Of course,I can!”; other printf ”Sorry,I can’t!”.</p>
+<p>  一道很经典简单的深度优先搜索部分求和问题；这道题所属南阳oj的搜索<br>代码：</p>
+<pre><code>import java.util.*;
+</code></pre><p>public class DFS2 {</p>
+<pre><code>static String s=&quot;&quot;;
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    Scanner input=new Scanner(System.in);
+    while(input.hasNext())
+    {
+    int n=input.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i&lt;n;i++)
+    a[i]=input.nextInt();
+    int k=input.nextInt();
+
+    dfs(a,n,k,0,0);
+    if(s.equals(&quot;&quot;))
+    {
+        System.out.print(&quot;Sorry,I can&apos;t!&quot;);
+        System.out.print(&apos;\n&apos;);
+    }
+    else
+    {
+        System.out.print(&quot;Of course,I can!&quot;);
+        System.out.print(&apos;\n&apos;);
+    }
+
+    s=&quot;&quot;;
+    }
+}
+
+public static void dfs(int a[],int n,int k,int pos,int sum)
+{
+    if(sum==k)
+        {
+            s=&quot;Of course,I can!&quot;;    
+            return;
+        }
+
+    if(sum&gt;k || pos&gt;=n)
+    {
+        return;
+    }
+
+
+    dfs(a,n,k,pos+1,sum);
+    dfs(a,n,k,pos+1,sum+a[pos]);
+}}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/person/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -747,12 +948,21 @@ System.out.println(sum);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -760,7 +970,7 @@ System.out.println(sum);
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
