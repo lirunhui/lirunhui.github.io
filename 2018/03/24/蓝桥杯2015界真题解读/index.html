@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="算法,JAVA," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第一题、三角形面积 如图1所示。图中的所有小方格面积都是1。那么，图中的三角形面积应该是多少呢？ 请填写三角形的面积。不要填写任何多余内容或说明性文字。 参考答案：28  点评：可以直接确定3条边的边长，然后用海伦公式。也可以用外接矩形的面积减去3个直角三角形的面积。这种算法很容易，口算即可。 二题、立方变自身 观察下面的现象,某个数字的立方，按位累加仍然等于自身。1^3 = 18^3  = 51">
+<meta name="keywords" content="算法,JAVA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="蓝桥杯2015界真题解读">
+<meta property="og:url" content="http://yoursite.com/2018/03/24/蓝桥杯2015界真题解读/index.html">
+<meta property="og:site_name" content="UI Development（LRH）">
+<meta property="og:description" content="第一题、三角形面积 如图1所示。图中的所有小方格面积都是1。那么，图中的三角形面积应该是多少呢？ 请填写三角形的面积。不要填写任何多余内容或说明性文字。 参考答案：28  点评：可以直接确定3条边的边长，然后用海伦公式。也可以用外接矩形的面积减去3个直角三角形的面积。这种算法很容易，口算即可。 二题、立方变自身 观察下面的现象,某个数字的立方，按位累加仍然等于自身。1^3 = 18^3  = 51">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-24T14:21:03.721Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="蓝桥杯2015界真题解读">
+<meta name="twitter:description" content="第一题、三角形面积 如图1所示。图中的所有小方格面积都是1。那么，图中的三角形面积应该是多少呢？ 请填写三角形的面积。不要填写任何多余内容或说明性文字。 参考答案：28  点评：可以直接确定3条边的边长，然后用海伦公式。也可以用外接矩形的面积减去3个直角三角形的面积。这种算法很容易，口算即可。 二题、立方变自身 观察下面的现象,某个数字的立方，按位累加仍然等于自身。1^3 = 18^3  = 51">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/24/蓝桥杯2015界真题解读/"/>
+
+
+
+
+
+  <title>蓝桥杯2015界真题解读 | UI Development（LRH）</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">UI Development（LRH）</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">专注前端</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/蓝桥杯2015界真题解读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LRH">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="UI Development（LRH）">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">蓝桥杯2015界真题解读</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-24T21:44:10+08:00">
+                2018-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>第一题、<br>三角形面积</p>
+<p>如图1所示。图中的所有小方格面积都是1。<br>那么，图中的三角形面积应该是多少呢？</p>
+<p>请填写三角形的面积。不要填写任何多余内容或说明性文字。</p>
+<p>参考答案：<br>28</p>
+<hr>
+<p>点评：<br>可以直接确定3条边的边长，然后用海伦公式。<br>也可以用外接矩形的面积减去3个直角三角形的面积。这种算法很容易，口算即可。</p>
+<p>二题、<br>立方变自身</p>
+<p>观察下面的现象,某个数字的立方，按位累加仍然等于自身。<br>1^3 = 1<br>8^3  = 512    5+1+2=8<br>17^3 = 4913   4+9+1+3=17<br>…</p>
+<p>请你计算包括1,8,17在内，符合这个性质的正整数一共有多少个？</p>
+<p>请填写该数字，不要填写任何多余的内容或说明性的文字。</p>
+<p>参考答案：<br>6</p>
+<hr>
+<p>点评：<br>这个数字不可能很大，我们很容易确定范围<br>（假设每个位都是9，其立方增长很快就超过了诸位和的增长）<br>逐一循环枚举即可。最终筛出来的6个数字：<br>1 1<br>8 512<br>17 4913<br>18 5832<br>26 17576<br>27 19683</p>
+<p>三题、<br>三羊献瑞</p>
+<p>观察下面的加法算式：</p>
+<pre><code>祥 瑞 生 辉
+</code></pre><ul>
+<li>三 羊 献 瑞</li>
+</ul>
+<hr>
+<p>   三 羊 生 瑞 气</p>
+<p>(如果有对齐问题，可以参看【图1.jpg】)</p>
+<p>其中，相同的汉字代表相同的数字，不同的汉字代表不同的数字。</p>
+<p>请你填写“三羊献瑞”所代表的4位数字（答案唯一），不要填写任何多余内容。</p>
+<p>参考答案：<br>1085</p>
+<hr>
+<p>点评：<br>规模小，可以暴力破解。<br>未知数比较多，表达式筛选要仔细，条件容易写马虎了。<br>如果用技巧，可以先确定几个未知数。<br>比如：<br>     ABCD</p>
+<ul>
+<li><h2 id="EFGB"><a href="#EFGB" class="headerlink" title="EFGB"></a>EFGB</h2>EFCBH</li>
+</ul>
+<p>根据加法的特点，E肯定是1，E与F不同，那F肯定是0。<br>F是0，加上B，得C，肯定是接受了进位，并且本列没有向前进位。<br>所以，A是9。这样剩下的未知数就没几个了。</p>
+<p>四题、<br>循环节长度</p>
+<p>两个整数做除法，有时会产生循环小数，其循环部分称为：循环节。<br>比如，11/13=6=&gt;0.846153846153…..  其循环节为[846153] 共有6位。<br>下面的方法，可以求出循环节的长度。</p>
+<p>请仔细阅读代码，并填写划线部分缺少的代码。</p>
+<pre><code>public static int f(int n, int m)
+{
+    n = n % m;    
+    Vector v = new Vector();
+
+    for(;;)
+    {
+        v.add(n);
+        n *= 10;
+        n = n % m;
+        if(n==0) return 0;
+        if(v.indexOf(n)&gt;=0)  _______return  v.size()-v.indexf(n)__________________________ ;  //填空
+    }
+}
+</code></pre><p>注意，只能填写缺少的部分，不要重复抄写已有代码。不要填写任何多余的文字。</p>
+<p>参考答案：<br>return v.size() - v.indexOf(n)</p>
+<p>五题、<br>九数组分数</p>
+<p>1,2,3…9 这九个数字组成一个分数，其值恰好为1/3，如何组法？</p>
+<p>下面的程序实现了该功能，请填写划线部分缺失的代码。</p>
+<p>public class A<br>{<br>    public static void test(int[] x)<br>    {<br>        int a = x[0]<em>1000 + x[1]</em>100 + x[2]<em>10 + x[3];<br>        int b = x[4]</em>10000 + x[5]<em>1000 + x[6]</em>100 + x[7]<em>10 + x[8];<br>        if(a</em>3==b) System.out.println(a + “ “ + b);<br>    }</p>
+<pre><code>public static void f(int[] x, int k)
+{
+    if(k&gt;=x.length){
+        test(x);
+        return;
+    }
+
+    for(int i=k; i&lt;x.length; i++){
+        {int t=x[k]; x[k]=x[i]; x[i]=t;}
+        f(x,k+1);
+        _______________________________________       // 填空
+    }
+}
+
+public static void main(String[] args)
+{
+    int[] x = {1,2,3,4,5,6,7,8,9};        
+    f(x,0);
+}
+</code></pre><p>}</p>
+<p>注意，只能填写缺少的部分，不要重复抄写已有代码。不要填写任何多余的文字。</p>
+<p>参考答案：<br>{int t=x[k]; x[k]=x[i]; x[i]=t;}</p>
+<p>六题、<br>加法变乘法</p>
+<p>我们都知道：1+2+3+ … + 49 = 1225<br>现在要求你把其中两个不相邻的加号变成乘号，使得结果为2015</p>
+<p>比如：<br>1+2+3+…+10<em>11+12+…+27</em>28+29+…+49 = 2015<br>就是符合要求的答案。</p>
+<p>请你寻找另外一个可能的答案，并把位置靠前的那个乘号左边的数字提交（对于示例，就是提交10）。</p>
+<p>注意：需要你提交的是一个整数，不要填写任何多余的内容。</p>
+<p>public class True2015_6 {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+    int temp=0;
+    int res=0;
+    for(int i=1;i&lt;47;i++)
+    {   temp=res=1225-(i+i+1)+i*(i+1);
+        for(int j=i+2;j&lt;49;j++)
+        {
+            res=temp-(j+j+1)+(j*(j+1));
+
+            if(res==2015)
+                System.out.println(i);
+        }
+    }
+}
+</code></pre><p>}<br>求出来结果是10 和16  答案只提交16即可</p>
+<p>七题、<br>牌型种数</p>
+<p>小明被劫持到X赌城，被迫与其他3人玩牌。<br>一副扑克牌（去掉大小王牌，共52张），均匀发给4个人，每个人13张。<br>这时，小明脑子里突然冒出一个问题：<br>如果不考虑花色，只考虑点数，也不考虑自己得到的牌的先后顺序，自己手里能拿到的初始牌型组合一共有多少种呢？</p>
+<p>请填写该整数，不要填写任何多余的内容或说明文字。</p>
+<p>解答代码：<br>public class True2015_7 {</p>
+<pre><code>static int count=0;
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+dfs(0,0);
+System.out.println(count);
+</code></pre><p>}</p>
+<pre><code>public static void dfs(int pos,int sum)
+{
+
+    if(pos&gt;13)
+    return;
+
+    else if( sum&gt;13)
+        return;
+    else if(sum==13)
+        {count++;
+        return;
+        }
+    else
+    {
+    dfs(pos+1,sum);
+    dfs(pos+1,sum+1);
+    dfs(pos+1,sum+2);
+    dfs(pos+1,sum+3);
+    dfs(pos+1,sum+4);
+    }
+}
+</code></pre><p>}</p>
+<p>八题、<br>饮料换购</p>
+<p>乐羊羊饮料厂正在举办一次促销优惠活动。乐羊羊C型饮料，凭3个瓶盖可以再换一瓶C型饮料，并且可以一直循环下去，但不允许赊账。</p>
+<p>请你计算一下，如果小明不浪费瓶盖，尽量地参加活动，那么，对于他初始买入的n瓶饮料，最后他一共能得到多少瓶饮料。</p>
+<p>输入：一个整数n，表示开始购买的饮料数量（0&lt;n&lt;10000）<br>输出：一个整数，表示实际得到的饮料数</p>
+<p>例如：<br>用户输入：<br>100<br>程序应该输出：<br>149</p>
+<p>用户输入：<br>101<br>程序应该输出：<br>151</p>
+<p>资源约定：<br>峰值内存消耗（含虚拟机） &lt; 256M<br>CPU消耗  &lt; 1000ms</p>
+<p>请严格按要求输出，不要画蛇添足地打印类似：“请您输入…” 的多余内容。</p>
+<p>所有代码放在同一个源文件中，调试通过后，拷贝提交该源码。<br>注意：不要使用package语句。不要使用jdk1.7及以上版本的特性。<br>注意：主类的名字必须是：Main，否则按无效代码处理。</p>
+<p>这题简单的循环就可以搞定，主要你要明白这个如何换取饮料</p>
+<p>import java.util.*;<br>public class True2015_8 {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+    Scanner input=new Scanner(System.in);
+    int n=input.nextInt();
+    int count=n;int t=0;
+    while(n&gt;=3)
+    {
+    t=n/3;//换的新饮料数量
+    count+=t;
+    n=t+n%3;//又得到的瓶盖数量
+    }
+
+    System.out.println(count);
+}
+</code></pre><p>}</p>
+<p>十题、</p>
+<p>生命之树</p>
+<p>在X森林里，上帝创建了生命之树。</p>
+<p>他给每棵树的每个节点（叶子也称为一个节点）上，都标了一个整数，代表这个点的和谐值。<br>上帝要在这棵树内选出一个非空节点集S，使得对于S中的任意两个点a,b，都存在一个点列 {a, v1, v2, …, vk, b} 使得这个点列中的每个点都是S里面的元素，且序列中相邻两个点间有一条边相连。</p>
+<p>在这个前提下，上帝要使得S中的点所对应的整数的和尽量大。<br>这个最大的和就是上帝给生命之树的评分。</p>
+<p>经过atm的努力，他已经知道了上帝给每棵树上每个节点上的整数。但是由于 atm 不擅长计算，他不知道怎样有效的求评分。他需要你为他写一个程序来计算一棵树的分数。</p>
+<p>「输入格式」<br>第一行一个整数 n 表示这棵树有 n 个节点。<br>第二行 n 个整数，依次表示每个节点的评分。<br>接下来 n-1 行，每行 2 个整数 u, v，表示存在一条 u 到 v 的边。由于这是一棵树，所以是不存在环的。</p>
+<p>「输出格式」<br>输出一行一个数，表示上帝给这棵树的分数。</p>
+<p>「样例输入」<br>5<br>1 -2 -3 4 5<br>4 2<br>3 1<br>1 2<br>2 5</p>
+<p>「样例输出」<br>8</p>
+<p>「数据范围」<br>对于 30% 的数据，n &lt;= 10<br>对于 100% 的数据，0 &lt; n &lt;= 10^5, 每个节点的评分的绝对值不超过 10^6 。</p>
+<p>资源约定：<br>峰值内存消耗（含虚拟机） &lt; 256M<br>CPU消耗  &lt; 3000ms</p>
+<p>请严格按要求输出，不要画蛇添足地打印类似：“请您输入…” 的多余内容。</p>
+<p>所有代码放在同一个源文件中，调试通过后，拷贝提交该源码。<br>注意：不要使用package语句。不要使用jdk1.7及以上版本的特性。<br>注意：主类的名字必须是：Main，否则按无效代码处理。</p>
+<p>import java.util.*;<br>public class True2015_10 {</p>
+<pre><code>static int max=0;
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+    Scanner input=new Scanner(System.in);
+    int n=input.nextInt();
+    int vis[]=new int[n+1];
+    int a[]=new int[n+1];
+    for(int i=1;i&lt;=n;i++)
+        a[i]=input.nextInt();
+    int b[][]=new int[n+1][n+1];
+    for(int i=0;i&lt;n-1;i++)
+    {
+        int x=input.nextInt();
+        int y=input.nextInt();
+        b[x][y]=b[y][x]=1;
+    }
+    dfs(b,vis,a,n,1);
+    System.out.println(max);
+}
+
+public static void dfs(int b[][],int v[],int a[],int n,int pos)
+{
+    v[pos]=1;
+    for(int i=1;i&lt;=n;i++)
+    {
+        if(v[i]!=1 &amp;&amp; b[pos][i]==1)
+        {
+            dfs(b,v,a,n,i);
+
+            if(a[pos]&lt;a[pos]+a[i])
+                a[pos]=a[pos]+a[i];
+            if(max&lt;a[pos])
+                max=a[pos];
+        }
+
+
+    }
+
+}
+</code></pre><p>}</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/23/The-partial-sum-problem/" rel="next" title="The partial sum problem">
+                <i class="fa fa-chevron-left"></i> The partial sum problem
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LRH</p>
+              <p class="site-description motion-element" itemprop="description">成为一名web前端工程师</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#EFGB"><span class="nav-number">1.</span> <span class="nav-text">EFGB</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LRH</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
